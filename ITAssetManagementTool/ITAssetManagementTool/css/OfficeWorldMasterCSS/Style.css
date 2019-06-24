@@ -1,0 +1,103 @@
+﻿html{
+    	padding:0;
+	margin:0;
+    clear:both;
+} 
+body {
+	        margin: 0 auto;
+	        width: 1200px;
+            
+	        font: 14px/20px "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+	        background:#DADFE1;
+            /* #999999; */ 
+            clear:both;
+        }
+.divs{
+    float:left;
+    position:relative;
+    
+}
+#backgrounds{
+    background:#666666;
+    position:relative;
+    top:6px;
+    border-radius:5px;
+    height:950px;
+}
+#pageTitle{
+    width:98%;
+    left:1%;
+    position: relative;
+        height:40px;
+    top:10px;
+
+}
+#pageContent{
+
+    width:98%;
+     background-color:#f8f8f8;
+     height:800px;
+     top:10px;
+     left:1%;
+}
+#topHeader{
+    width:98%;
+    left:1%;
+}
+#pageTitle{
+    position:relative;
+    width:98%;
+    left:1%;
+    height:30px;
+    vertical-align:middle;
+    font-size:16px;
+}
+.navbar-inverse {
+    background-color: #FF9900;
+    border:none;
+    color:#ffffff;
+    font-weight:bold;
+    text-align:center;
+    
+}
+#footers{
+    position:relative;
+    width:98%;
+    left:1%;
+    background:#000000;
+    background: -moz-linear-gradient(top, #666666 0%, #000000 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #666666 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #666666 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+color:white;
+text-align:center;
+height:35px;
+display:table-cell;
+vertical-align:middle;
+
+}
+.dropdown{
+    position:relative;
+    float:left;
+    
+}
+.navbar-right{
+    margin-right:-0px;
+    
+}
+.navbar-top-links navbar-right
+{
+    color:#FF9900;
+}
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+.popover{
+    max-width:none;
+}

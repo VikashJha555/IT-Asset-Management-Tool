@@ -1,0 +1,869 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7453895-5B4B-4A46-8925-363BFD3B4F5B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITAssetManagementTool</RootNamespace>
+    <AssemblyName>ITAssetManagementTool</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44388</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.1\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin.aspx" />
+    <Content Include="AdminAllotAsset.aspx" />
+    <Content Include="AdminAssetView.aspx" />
+    <Content Include="AdminAttachments.aspx" />
+    <Content Include="AllotAsset.aspx" />
+    <Content Include="App_Data\AssetAllotmentRecord.mdf" />
+    <Content Include="App_Data\AssetAllotmentRecord_log.ldf">
+      <DependentUpon>AssetAllotmentRecord.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\AssetRecord.mdf" />
+    <Content Include="App_Data\AssetRecord_log.ldf">
+      <DependentUpon>AssetRecord.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Registration.mdf" />
+    <Content Include="App_Data\Registration_log.ldf">
+      <DependentUpon>Registration.mdf</DependentUpon>
+    </Content>
+    <Content Include="AssetRecord.aspx" />
+    <Content Include="Attachments.aspx" />
+    <Content Include="css\DefaultPageCSS\StyleSheet.css" />
+    <Content Include="css\OfficeWorldMasterCSS\Style.css" />
+    <Content Include="css\Style\css\bootstrap-datepicker.css" />
+    <Content Include="css\Style\css\bootstrap-dialog.css" />
+    <Content Include="css\Style\css\bootstrap-theme.css" />
+    <Content Include="css\Style\css\bootstrap-theme.min.css" />
+    <Content Include="css\Style\css\bootstrap.css" />
+    <Content Include="css\Style\css\bootstrap.min.css" />
+    <Content Include="css\Style\css\grid.css" />
+    <Content Include="css\Style\css\GridView.css" />
+    <Content Include="css\Style\css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\Style\css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\Style\css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\Style\css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\Style\css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\Style\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\Style\css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\Style\css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\Style\css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\Style\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\Style\css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\Style\css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\Style\css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\Style\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\Style\css\jquery-ui-1.10.0.custom.css" />
+    <Content Include="css\Style\css\jquery-ui.css" />
+    <Content Include="css\Style\css\jquery-ui.structure.css" />
+    <Content Include="css\Style\css\jquery-ui.theme.css" />
+    <Content Include="css\Style\css\MainStyle.css" />
+    <Content Include="css\Style\css\Normalize.css" />
+    <Content Include="css\Style\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\220px-User_icon_2.svg.png" />
+    <Content Include="images\american-express.png" />
+    <Content Include="images\ContiLogo.png" />
+    <Content Include="images\continentalLogo.png" />
+    <Content Include="images\inbox.png" />
+    <Content Include="images\Logo.PNG" />
+    <Content Include="images\mastercard.png" />
+    <Content Include="images\media.jpg" />
+    <Content Include="images\paypal.png" />
+    <Content Include="images\PrintButton.jpg" />
+    <Content Include="images\user.png" />
+    <Content Include="images\visa.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="Registration.aspx" />
+    <Content Include="Script\bootstrap-datepicker.js" />
+    <Content Include="Script\bootstrap.min.js" />
+    <Content Include="Script\jquery-ui-1.10.0.js" />
+    <Content Include="Script\jquery.min.js" />
+    <Content Include="Script\OfficeWorldJSFunction.js" />
+    <Content Include="SearchAsset.aspx" />
+    <Content Include="SearchEmployee.aspx" />
+    <Content Include="Users.aspx" />
+    <Content Include="vendors\animate.css\animate.css" />
+    <Content Include="vendors\animate.css\animate.min.css" />
+    <Content Include="vendors\animate.css\gulpfile.js" />
+    <Content Include="vendors\autosize\build.js" />
+    <Content Include="vendors\autosize\dist\autosize.js" />
+    <Content Include="vendors\autosize\dist\autosize.min.js" />
+    <Content Include="vendors\autosize\example\index.html" />
+    <Content Include="vendors\autosize\src\autosize.js" />
+    <Content Include="vendors\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="vendors\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="vendors\bootstrap-daterangepicker\demo.html" />
+    <Content Include="vendors\bootstrap-daterangepicker\drp.png" />
+    <Content Include="vendors\bootstrap-daterangepicker\example\amd\index.html" />
+    <Content Include="vendors\bootstrap-daterangepicker\example\amd\main.js" />
+    <Content Include="vendors\bootstrap-daterangepicker\example\amd\require.js" />
+    <Content Include="vendors\bootstrap-daterangepicker\example\browserify\bundle.js" />
+    <Content Include="vendors\bootstrap-daterangepicker\example\browserify\index.html" />
+    <Content Include="vendors\bootstrap-daterangepicker\example\browserify\main.js" />
+    <Content Include="vendors\bootstrap-daterangepicker\package.js" />
+    <Content Include="vendors\bootstrap-daterangepicker\website\index.html" />
+    <Content Include="vendors\bootstrap-daterangepicker\website\website.css" />
+    <Content Include="vendors\bootstrap-daterangepicker\website\website.js" />
+    <Content Include="vendors\bootstrap-progressbar\bootstrap-progressbar.js" />
+    <Content Include="vendors\bootstrap-progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.0.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.0.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.1.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.1.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.2.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.2.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.3.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.3.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.4.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.0.4.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.1.0.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.1.0.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.1.1.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.1.1.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.2.0.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.2.0.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.2.1.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.2.1.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.2.2.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.2.2.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.3.0.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.3.0.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.3.1.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.3.1.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.3.2.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-2.3.2.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.0-rc1.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.0-rc1.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.0-rc2.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.0-rc2.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.0.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.0.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.1.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.1.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.2.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.2.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.3.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.0.3.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.1.0.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.1.0.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.1.1.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.1.1.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.2.0.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.2.0.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.3.0.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.3.0.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.3.1.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.3.1.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.3.2.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.3.2.min.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.3.4.css" />
+    <Content Include="vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="vendors\bootstrap-wysiwyg\css\style.css" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\basic.html" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\clear-formatting.html" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\events.html" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\form-post.html" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\formatblock-example.html" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\html-editor.html" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\multiple-editors.html" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\php\upload.php" />
+    <Content Include="vendors\bootstrap-wysiwyg\examples\simple-toolbar.html" />
+    <Content Include="vendors\bootstrap-wysiwyg\gruntfile.js" />
+    <Content Include="vendors\bootstrap-wysiwyg\gulpfile.js" />
+    <Content Include="vendors\bootstrap-wysiwyg\js\bootstrap-wysiwyg.min.js" />
+    <Content Include="vendors\bootstrap-wysiwyg\src\bootstrap-wysiwyg.js" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="vendors\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="vendors\bootstrap\dist\js\npm.js" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="vendors\bootstrap\Gruntfile.js" />
+    <Content Include="vendors\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="vendors\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="vendors\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="vendors\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="vendors\bootstrap\js\affix.js" />
+    <Content Include="vendors\bootstrap\js\alert.js" />
+    <Content Include="vendors\bootstrap\js\button.js" />
+    <Content Include="vendors\bootstrap\js\carousel.js" />
+    <Content Include="vendors\bootstrap\js\collapse.js" />
+    <Content Include="vendors\bootstrap\js\dropdown.js" />
+    <Content Include="vendors\bootstrap\js\modal.js" />
+    <Content Include="vendors\bootstrap\js\popover.js" />
+    <Content Include="vendors\bootstrap\js\scrollspy.js" />
+    <Content Include="vendors\bootstrap\js\tab.js" />
+    <Content Include="vendors\bootstrap\js\tooltip.js" />
+    <Content Include="vendors\bootstrap\js\transition.js" />
+    <Content Include="vendors\bootstrap\package.js" />
+    <Content Include="vendors\Chart.js\dist\Chart.bundle.js" />
+    <Content Include="vendors\Chart.js\dist\Chart.bundle.min.js" />
+    <Content Include="vendors\Chart.js\dist\Chart.js" />
+    <Content Include="vendors\Chart.js\dist\Chart.min.js" />
+    <Content Include="vendors\Chart.js\gulpfile.js" />
+    <Content Include="vendors\Chart.js\karma.conf.ci.js" />
+    <Content Include="vendors\Chart.js\karma.conf.js" />
+    <Content Include="vendors\Chart.js\karma.coverage.conf.js" />
+    <Content Include="vendors\Chart.js\samples\AnimationCallbacks\progress-bar.html" />
+    <Content Include="vendors\Chart.js\samples\bar-horizontal.html" />
+    <Content Include="vendors\Chart.js\samples\bar-multi-axis.html" />
+    <Content Include="vendors\Chart.js\samples\bar-stacked.html" />
+    <Content Include="vendors\Chart.js\samples\bar.html" />
+    <Content Include="vendors\Chart.js\samples\bubble.html" />
+    <Content Include="vendors\Chart.js\samples\combo-bar-line.html" />
+    <Content Include="vendors\Chart.js\samples\data_label_combo-bar-line.html" />
+    <Content Include="vendors\Chart.js\samples\different-point-sizes.html" />
+    <Content Include="vendors\Chart.js\samples\doughnut.html" />
+    <Content Include="vendors\Chart.js\samples\line-customTooltips.html" />
+    <Content Include="vendors\Chart.js\samples\line-legend.html" />
+    <Content Include="vendors\Chart.js\samples\line-logarithmic.html" />
+    <Content Include="vendors\Chart.js\samples\line-multi-axis.html" />
+    <Content Include="vendors\Chart.js\samples\line-skip-points.html" />
+    <Content Include="vendors\Chart.js\samples\line-stacked-area.html" />
+    <Content Include="vendors\Chart.js\samples\line-x-axis-filter.html" />
+    <Content Include="vendors\Chart.js\samples\line.html" />
+    <Content Include="vendors\Chart.js\samples\pie-customTooltips.html" />
+    <Content Include="vendors\Chart.js\samples\pie.html" />
+    <Content Include="vendors\Chart.js\samples\polar-area.html" />
+    <Content Include="vendors\Chart.js\samples\radar-skip-points.html" />
+    <Content Include="vendors\Chart.js\samples\radar.html" />
+    <Content Include="vendors\Chart.js\samples\scatter-logX.html" />
+    <Content Include="vendors\Chart.js\samples\scatter-multi-axis.html" />
+    <Content Include="vendors\Chart.js\samples\scatter.html" />
+    <Content Include="vendors\Chart.js\samples\timeScale\combo-time-scale.html" />
+    <Content Include="vendors\Chart.js\samples\timeScale\line-time-point-data.html" />
+    <Content Include="vendors\Chart.js\samples\timeScale\line-time-scale.html" />
+    <Content Include="vendors\Chart.js\samples\tooltip-hooks.html" />
+    <Content Include="vendors\Chart.js\src\chart.js" />
+    <Content Include="vendors\Chart.js\src\charts\Chart.Bar.js" />
+    <Content Include="vendors\Chart.js\src\charts\Chart.Bubble.js" />
+    <Content Include="vendors\Chart.js\src\charts\Chart.Doughnut.js" />
+    <Content Include="vendors\Chart.js\src\charts\Chart.Line.js" />
+    <Content Include="vendors\Chart.js\src\charts\Chart.PolarArea.js" />
+    <Content Include="vendors\Chart.js\src\charts\Chart.Radar.js" />
+    <Content Include="vendors\Chart.js\src\charts\Chart.Scatter.js" />
+    <Content Include="vendors\Chart.js\src\controllers\controller.bar.js" />
+    <Content Include="vendors\Chart.js\src\controllers\controller.bubble.js" />
+    <Content Include="vendors\Chart.js\src\controllers\controller.doughnut.js" />
+    <Content Include="vendors\Chart.js\src\controllers\controller.line.js" />
+    <Content Include="vendors\Chart.js\src\controllers\controller.polarArea.js" />
+    <Content Include="vendors\Chart.js\src\controllers\controller.radar.js" />
+    <Content Include="vendors\Chart.js\src\core\core.animation.js" />
+    <Content Include="vendors\Chart.js\src\core\core.controller.js" />
+    <Content Include="vendors\Chart.js\src\core\core.datasetController.js" />
+    <Content Include="vendors\Chart.js\src\core\core.element.js" />
+    <Content Include="vendors\Chart.js\src\core\core.helpers.js" />
+    <Content Include="vendors\Chart.js\src\core\core.js" />
+    <Content Include="vendors\Chart.js\src\core\core.layoutService.js" />
+    <Content Include="vendors\Chart.js\src\core\core.legend.js" />
+    <Content Include="vendors\Chart.js\src\core\core.plugin.js" />
+    <Content Include="vendors\Chart.js\src\core\core.scale.js" />
+    <Content Include="vendors\Chart.js\src\core\core.scaleService.js" />
+    <Content Include="vendors\Chart.js\src\core\core.title.js" />
+    <Content Include="vendors\Chart.js\src\core\core.tooltip.js" />
+    <Content Include="vendors\Chart.js\src\elements\element.arc.js" />
+    <Content Include="vendors\Chart.js\src\elements\element.line.js" />
+    <Content Include="vendors\Chart.js\src\elements\element.point.js" />
+    <Content Include="vendors\Chart.js\src\elements\element.rectangle.js" />
+    <Content Include="vendors\Chart.js\src\scales\scale.category.js" />
+    <Content Include="vendors\Chart.js\src\scales\scale.linear.js" />
+    <Content Include="vendors\Chart.js\src\scales\scale.logarithmic.js" />
+    <Content Include="vendors\Chart.js\src\scales\scale.radialLinear.js" />
+    <Content Include="vendors\Chart.js\src\scales\scale.time.js" />
+    <Content Include="vendors\Chart.js\test\controller.bar.tests.js" />
+    <Content Include="vendors\Chart.js\test\controller.bubble.tests.js" />
+    <Content Include="vendors\Chart.js\test\controller.doughnut.tests.js" />
+    <Content Include="vendors\Chart.js\test\controller.line.tests.js" />
+    <Content Include="vendors\Chart.js\test\controller.polarArea.tests.js" />
+    <Content Include="vendors\Chart.js\test\controller.radar.tests.js" />
+    <Content Include="vendors\Chart.js\test\core.element.tests.js" />
+    <Content Include="vendors\Chart.js\test\core.helpers.tests.js" />
+    <Content Include="vendors\Chart.js\test\core.layoutService.tests.js" />
+    <Content Include="vendors\Chart.js\test\core.legend.tests.js" />
+    <Content Include="vendors\Chart.js\test\core.plugin.tests.js" />
+    <Content Include="vendors\Chart.js\test\core.scaleService.tests.js" />
+    <Content Include="vendors\Chart.js\test\core.title.tests.js" />
+    <Content Include="vendors\Chart.js\test\defaultConfig.tests.js" />
+    <Content Include="vendors\Chart.js\test\element.arc.tests.js" />
+    <Content Include="vendors\Chart.js\test\element.line.tests.js" />
+    <Content Include="vendors\Chart.js\test\element.point.tests.js" />
+    <Content Include="vendors\Chart.js\test\element.rectangle.tests.js" />
+    <Content Include="vendors\Chart.js\test\mockContext.js" />
+    <Content Include="vendors\Chart.js\test\scale.category.tests.js" />
+    <Content Include="vendors\Chart.js\test\scale.linear.tests.js" />
+    <Content Include="vendors\Chart.js\test\scale.logarithmic.tests.js" />
+    <Content Include="vendors\Chart.js\test\scale.radialLinear.tests.js" />
+    <Content Include="vendors\Chart.js\test\scale.time.tests.js" />
+    <Content Include="vendors\cropper\dist\cropper.css" />
+    <Content Include="vendors\cropper\dist\cropper.js" />
+    <Content Include="vendors\cropper\dist\cropper.min.css" />
+    <Content Include="vendors\cropper\dist\cropper.min.js" />
+    <Content Include="vendors\cropper\src\img\bg.png" />
+    <Content Include="vendors\cropper\src\js\bind.js" />
+    <Content Include="vendors\cropper\src\js\build.js" />
+    <Content Include="vendors\cropper\src\js\change.js" />
+    <Content Include="vendors\cropper\src\js\cropper.js" />
+    <Content Include="vendors\cropper\src\js\defaults.js" />
+    <Content Include="vendors\cropper\src\js\handlers.js" />
+    <Content Include="vendors\cropper\src\js\init.js" />
+    <Content Include="vendors\cropper\src\js\intro.js" />
+    <Content Include="vendors\cropper\src\js\methods.js" />
+    <Content Include="vendors\cropper\src\js\outro.js" />
+    <Content Include="vendors\cropper\src\js\plugin.js" />
+    <Content Include="vendors\cropper\src\js\preview.js" />
+    <Content Include="vendors\cropper\src\js\render.js" />
+    <Content Include="vendors\cropper\src\js\template.js" />
+    <Content Include="vendors\cropper\src\js\utilities.js" />
+    <Content Include="vendors\cropper\src\js\variables.js" />
+    <Content Include="vendors\datatables.net-bs\css\dataTables.bootstrap.css" />
+    <Content Include="vendors\datatables.net-bs\css\dataTables.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-bs\js\dataTables.bootstrap.js" />
+    <Content Include="vendors\datatables.net-bs\js\dataTables.bootstrap.min.js" />
+    <Content Include="vendors\datatables.net-bs\License.txt" />
+    <Content Include="vendors\datatables.net-buttons-bs\css\buttons.bootstrap.css" />
+    <Content Include="vendors\datatables.net-buttons-bs\css\buttons.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-buttons-bs\js\buttons.bootstrap.js" />
+    <Content Include="vendors\datatables.net-buttons-bs\js\buttons.bootstrap.min.js" />
+    <Content Include="vendors\datatables.net-buttons-bs\License.txt" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.colVis.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.colVis.min.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.flash.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.flash.min.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.html5.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.html5.min.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.print.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.print.min.js" />
+    <Content Include="vendors\datatables.net-buttons\js\dataTables.buttons.js" />
+    <Content Include="vendors\datatables.net-buttons\js\dataTables.buttons.min.js" />
+    <Content Include="vendors\datatables.net-buttons\License.txt" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\css\fixedHeader.bootstrap.css" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\License.txt" />
+    <Content Include="vendors\datatables.net-fixedheader\js\dataTables.fixedHeader.js" />
+    <Content Include="vendors\datatables.net-fixedheader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="vendors\datatables.net-fixedheader\License.txt" />
+    <Content Include="vendors\datatables.net-keytable\js\dataTables.keyTable.js" />
+    <Content Include="vendors\datatables.net-keytable\js\dataTables.keyTable.min.js" />
+    <Content Include="vendors\datatables.net-keytable\License.txt" />
+    <Content Include="vendors\datatables.net-responsive-bs\css\responsive.bootstrap.css" />
+    <Content Include="vendors\datatables.net-responsive-bs\css\responsive.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-responsive-bs\js\responsive.bootstrap.js" />
+    <Content Include="vendors\datatables.net-responsive-bs\License.txt" />
+    <Content Include="vendors\datatables.net-responsive\js\dataTables.responsive.js" />
+    <Content Include="vendors\datatables.net-responsive\js\dataTables.responsive.min.js" />
+    <Content Include="vendors\datatables.net-responsive\License.txt" />
+    <Content Include="vendors\datatables.net-scroller-bs\css\scroller.bootstrap.css" />
+    <Content Include="vendors\datatables.net-scroller-bs\css\scroller.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-scroller-bs\License.txt" />
+    <Content Include="vendors\datatables.net-scroller\js\dataTables.scroller.js" />
+    <Content Include="vendors\datatables.net-scroller\js\dataTables.scroller.min.js" />
+    <Content Include="vendors\datatables.net-scroller\License.txt" />
+    <Content Include="vendors\datatables.net\js\jquery.dataTables.js" />
+    <Content Include="vendors\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="vendors\datatables.net\License.txt" />
+    <Content Include="vendors\DateJS\build\date-af-ZA.js" />
+    <Content Include="vendors\DateJS\build\date-ar-AE.js" />
+    <Content Include="vendors\DateJS\build\date-ar-BH.js" />
+    <Content Include="vendors\DateJS\build\date-ar-DZ.js" />
+    <Content Include="vendors\DateJS\build\date-ar-EG.js" />
+    <Content Include="vendors\DateJS\build\date-ar-IQ.js" />
+    <Content Include="vendors\DateJS\build\date-ar-JO.js" />
+    <Content Include="vendors\DateJS\build\date-ar-KW.js" />
+    <Content Include="vendors\DateJS\build\date-ar-LB.js" />
+    <Content Include="vendors\DateJS\build\date-ar-LY.js" />
+    <Content Include="vendors\DateJS\build\date-ar-MA.js" />
+    <Content Include="vendors\DateJS\build\date-ar-OM.js" />
+    <Content Include="vendors\DateJS\build\date-ar-QA.js" />
+    <Content Include="vendors\DateJS\build\date-ar-SA.js" />
+    <Content Include="vendors\DateJS\build\date-ar-SY.js" />
+    <Content Include="vendors\DateJS\build\date-ar-TN.js" />
+    <Content Include="vendors\DateJS\build\date-ar-YE.js" />
+    <Content Include="vendors\DateJS\build\date-az-Cyrl-AZ.js" />
+    <Content Include="vendors\DateJS\build\date-az-Latn-AZ.js" />
+    <Content Include="vendors\DateJS\build\date-be-BY.js" />
+    <Content Include="vendors\DateJS\build\date-bg-BG.js" />
+    <Content Include="vendors\DateJS\build\date-bs-Latn-BA.js" />
+    <Content Include="vendors\DateJS\build\date-ca-ES.js" />
+    <Content Include="vendors\DateJS\build\date-cs-CZ.js" />
+    <Content Include="vendors\DateJS\build\date-cy-GB.js" />
+    <Content Include="vendors\DateJS\build\date-da-DK.js" />
+    <Content Include="vendors\DateJS\build\date-de-AT.js" />
+    <Content Include="vendors\DateJS\build\date-de-CH.js" />
+    <Content Include="vendors\DateJS\build\date-de-DE.js" />
+    <Content Include="vendors\DateJS\build\date-de-LI.js" />
+    <Content Include="vendors\DateJS\build\date-de-LU.js" />
+    <Content Include="vendors\DateJS\build\date-dv-MV.js" />
+    <Content Include="vendors\DateJS\build\date-el-GR.js" />
+    <Content Include="vendors\DateJS\build\date-en-029.js" />
+    <Content Include="vendors\DateJS\build\date-en-AU.js" />
+    <Content Include="vendors\DateJS\build\date-en-BZ.js" />
+    <Content Include="vendors\DateJS\build\date-en-CA.js" />
+    <Content Include="vendors\DateJS\build\date-en-GB.js" />
+    <Content Include="vendors\DateJS\build\date-en-IE.js" />
+    <Content Include="vendors\DateJS\build\date-en-JM.js" />
+    <Content Include="vendors\DateJS\build\date-en-NZ.js" />
+    <Content Include="vendors\DateJS\build\date-en-PH.js" />
+    <Content Include="vendors\DateJS\build\date-en-TT.js" />
+    <Content Include="vendors\DateJS\build\date-en-US.js" />
+    <Content Include="vendors\DateJS\build\date-en-ZA.js" />
+    <Content Include="vendors\DateJS\build\date-en-ZW.js" />
+    <Content Include="vendors\DateJS\build\date-es-AR.js" />
+    <Content Include="vendors\DateJS\build\date-es-BO.js" />
+    <Content Include="vendors\DateJS\build\date-es-CL.js" />
+    <Content Include="vendors\DateJS\build\date-es-CO.js" />
+    <Content Include="vendors\DateJS\build\date-es-CR.js" />
+    <Content Include="vendors\DateJS\build\date-es-DO.js" />
+    <Content Include="vendors\DateJS\build\date-es-EC.js" />
+    <Content Include="vendors\DateJS\build\date-es-ES.js" />
+    <Content Include="vendors\DateJS\build\date-es-GT.js" />
+    <Content Include="vendors\DateJS\build\date-es-HN.js" />
+    <Content Include="vendors\DateJS\build\date-es-MX.js" />
+    <Content Include="vendors\DateJS\GruntFile.js" />
+    <Content Include="vendors\DateJS\index.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAllotAsset.aspx.cs">
+      <DependentUpon>AdminAllotAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAllotAsset.aspx.designer.cs">
+      <DependentUpon>AdminAllotAsset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAssetView.aspx.cs">
+      <DependentUpon>AdminAssetView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAssetView.aspx.designer.cs">
+      <DependentUpon>AdminAssetView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAttachments.aspx.cs">
+      <DependentUpon>AdminAttachments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAttachments.aspx.designer.cs">
+      <DependentUpon>AdminAttachments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllotAsset.aspx.cs">
+      <DependentUpon>AllotAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllotAsset.aspx.designer.cs">
+      <DependentUpon>AllotAsset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssetRecord.aspx.cs">
+      <DependentUpon>AssetRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssetRecord.aspx.designer.cs">
+      <DependentUpon>AssetRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Attachments.aspx.cs">
+      <DependentUpon>Attachments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attachments.aspx.designer.cs">
+      <DependentUpon>Attachments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMasterPage.Master.cs">
+      <DependentUpon>LoginMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginMasterPage.Master.designer.cs">
+      <DependentUpon>LoginMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAsset.aspx.cs">
+      <DependentUpon>SearchAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchAsset.aspx.designer.cs">
+      <DependentUpon>SearchAsset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchEmployee.aspx.cs">
+      <DependentUpon>SearchEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchEmployee.aspx.designer.cs">
+      <DependentUpon>SearchEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage.Master" />
+    <Content Include="css\Style\css\images\Thumbs.db" />
+    <Content Include="css\Style\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\Style\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\Style\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\Style\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="LoginMasterPage.Master" />
+    <None Include="packages.config" />
+    <Content Include="vendors\animate.css\.bower.json" />
+    <Content Include="vendors\animate.css\animate-config.json" />
+    <Content Include="vendors\animate.css\bower.json" />
+    <Content Include="vendors\animate.css\package.json" />
+    <Content Include="vendors\autosize\.bower.json" />
+    <Content Include="vendors\autosize\.gitignore" />
+    <Content Include="vendors\autosize\bower.json" />
+    <Content Include="vendors\autosize\changelog.md" />
+    <Content Include="vendors\autosize\LICENSE.md" />
+    <Content Include="vendors\autosize\package.json" />
+    <Content Include="vendors\autosize\readme.md" />
+    <Content Include="vendors\bootstrap-daterangepicker\.bower.json" />
+    <Content Include="vendors\bootstrap-daterangepicker\bower.json" />
+    <Content Include="vendors\bootstrap-daterangepicker\daterangepicker.scss" />
+    <Content Include="vendors\bootstrap-daterangepicker\example\browserify\README.md" />
+    <Content Include="vendors\bootstrap-daterangepicker\package.json" />
+    <Content Include="vendors\bootstrap-daterangepicker\README.md" />
+    <Content Include="vendors\bootstrap-progressbar\.bower.json" />
+    <Content Include="vendors\bootstrap-progressbar\bower.json" />
+    <Content Include="vendors\bootstrap-progressbar\CHANGELOG.md" />
+    <Content Include="vendors\bootstrap-progressbar\CONTRIBUTORS.md" />
+    <Content Include="vendors\bootstrap-progressbar\less\bootstrap-progressbar-2.x.x.less" />
+    <Content Include="vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.0.0-3.1.x.less" />
+    <Content Include="vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.2.0.less" />
+    <Content Include="vendors\bootstrap-progressbar\less\bootstrap-progressbar-3.3.0-3.x.x.less" />
+    <Content Include="vendors\bootstrap-progressbar\LICENSE" />
+    <Content Include="vendors\bootstrap-progressbar\package.json" />
+    <Content Include="vendors\bootstrap-progressbar\README.md" />
+    <Content Include="vendors\bootstrap-progressbar\scss\bootstrap-progressbar-2.x.x.scss" />
+    <Content Include="vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.0.0-3.1.x.scss" />
+    <Content Include="vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.2.0.scss" />
+    <Content Include="vendors\bootstrap-progressbar\scss\bootstrap-progressbar-3.3.0-3.x.x.scss" />
+    <Content Include="vendors\bootstrap-wysiwyg\.bower.json" />
+    <Content Include="vendors\bootstrap-wysiwyg\bower.json" />
+    <Content Include="vendors\bootstrap-wysiwyg\package.json" />
+    <Content Include="vendors\bootstrap-wysiwyg\README.md" />
+    <Content Include="vendors\bootstrap\.bower.json" />
+    <Content Include="vendors\bootstrap\bower.json" />
+    <Content Include="vendors\bootstrap\CHANGELOG.md" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="vendors\bootstrap\grunt\.jshintrc" />
+    <Content Include="vendors\bootstrap\grunt\configBridge.json" />
+    <Content Include="vendors\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="vendors\bootstrap\js\.jscsrc" />
+    <Content Include="vendors\bootstrap\js\.jshintrc" />
+    <Content Include="vendors\bootstrap\less\.csscomb.json" />
+    <Content Include="vendors\bootstrap\less\.csslintrc" />
+    <Content Include="vendors\bootstrap\less\alerts.less" />
+    <Content Include="vendors\bootstrap\less\badges.less" />
+    <Content Include="vendors\bootstrap\less\bootstrap.less" />
+    <Content Include="vendors\bootstrap\less\breadcrumbs.less" />
+    <Content Include="vendors\bootstrap\less\button-groups.less" />
+    <Content Include="vendors\bootstrap\less\buttons.less" />
+    <Content Include="vendors\bootstrap\less\carousel.less" />
+    <Content Include="vendors\bootstrap\less\close.less" />
+    <Content Include="vendors\bootstrap\less\code.less" />
+    <Content Include="vendors\bootstrap\less\component-animations.less" />
+    <Content Include="vendors\bootstrap\less\dropdowns.less" />
+    <Content Include="vendors\bootstrap\less\forms.less" />
+    <Content Include="vendors\bootstrap\less\glyphicons.less" />
+    <Content Include="vendors\bootstrap\less\grid.less" />
+    <Content Include="vendors\bootstrap\less\input-groups.less" />
+    <Content Include="vendors\bootstrap\less\jumbotron.less" />
+    <Content Include="vendors\bootstrap\less\labels.less" />
+    <Content Include="vendors\bootstrap\less\list-group.less" />
+    <Content Include="vendors\bootstrap\less\media.less" />
+    <Content Include="vendors\bootstrap\less\mixins.less" />
+    <Content Include="vendors\bootstrap\less\mixins\alerts.less" />
+    <Content Include="vendors\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="vendors\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="vendors\bootstrap\less\mixins\buttons.less" />
+    <Content Include="vendors\bootstrap\less\mixins\center-block.less" />
+    <Content Include="vendors\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="vendors\bootstrap\less\mixins\forms.less" />
+    <Content Include="vendors\bootstrap\less\mixins\gradients.less" />
+    <Content Include="vendors\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="vendors\bootstrap\less\mixins\grid.less" />
+    <Content Include="vendors\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="vendors\bootstrap\less\mixins\image.less" />
+    <Content Include="vendors\bootstrap\less\mixins\labels.less" />
+    <Content Include="vendors\bootstrap\less\mixins\list-group.less" />
+    <Content Include="vendors\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="vendors\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="vendors\bootstrap\less\mixins\opacity.less" />
+    <Content Include="vendors\bootstrap\less\mixins\pagination.less" />
+    <Content Include="vendors\bootstrap\less\mixins\panels.less" />
+    <Content Include="vendors\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="vendors\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="vendors\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="vendors\bootstrap\less\mixins\resize.less" />
+    <Content Include="vendors\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="vendors\bootstrap\less\mixins\size.less" />
+    <Content Include="vendors\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="vendors\bootstrap\less\mixins\table-row.less" />
+    <Content Include="vendors\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="vendors\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="vendors\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="vendors\bootstrap\less\modals.less" />
+    <Content Include="vendors\bootstrap\less\navbar.less" />
+    <Content Include="vendors\bootstrap\less\navs.less" />
+    <Content Include="vendors\bootstrap\less\normalize.less" />
+    <Content Include="vendors\bootstrap\less\pager.less" />
+    <Content Include="vendors\bootstrap\less\pagination.less" />
+    <Content Include="vendors\bootstrap\less\panels.less" />
+    <Content Include="vendors\bootstrap\less\popovers.less" />
+    <Content Include="vendors\bootstrap\less\print.less" />
+    <Content Include="vendors\bootstrap\less\progress-bars.less" />
+    <Content Include="vendors\bootstrap\less\responsive-embed.less" />
+    <Content Include="vendors\bootstrap\less\responsive-utilities.less" />
+    <Content Include="vendors\bootstrap\less\scaffolding.less" />
+    <Content Include="vendors\bootstrap\less\tables.less" />
+    <Content Include="vendors\bootstrap\less\theme.less" />
+    <Content Include="vendors\bootstrap\less\thumbnails.less" />
+    <Content Include="vendors\bootstrap\less\tooltip.less" />
+    <Content Include="vendors\bootstrap\less\type.less" />
+    <Content Include="vendors\bootstrap\less\utilities.less" />
+    <Content Include="vendors\bootstrap\less\variables.less" />
+    <Content Include="vendors\bootstrap\less\wells.less" />
+    <Content Include="vendors\bootstrap\LICENSE" />
+    <Content Include="vendors\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="vendors\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="vendors\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="vendors\bootstrap\package.json" />
+    <Content Include="vendors\bootstrap\README.md" />
+    <Content Include="vendors\Chart.js\.bower.json" />
+    <Content Include="vendors\Chart.js\.codeclimate.yml" />
+    <Content Include="vendors\Chart.js\.editorconfig" />
+    <Content Include="vendors\Chart.js\.eslintignore" />
+    <Content Include="vendors\Chart.js\.eslintrc" />
+    <Content Include="vendors\Chart.js\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="vendors\Chart.js\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="vendors\Chart.js\.gitignore" />
+    <Content Include="vendors\Chart.js\.travis.yml" />
+    <Content Include="vendors\Chart.js\bower.json" />
+    <Content Include="vendors\Chart.js\composer.json" />
+    <Content Include="vendors\Chart.js\config.jshintrc" />
+    <Content Include="vendors\Chart.js\CONTRIBUTING.md" />
+    <Content Include="vendors\Chart.js\docs\00-Getting-Started.md" />
+    <Content Include="vendors\Chart.js\docs\01-Chart-Configuration.md" />
+    <Content Include="vendors\Chart.js\docs\02-Scales.md" />
+    <Content Include="vendors\Chart.js\docs\03-Line-Chart.md" />
+    <Content Include="vendors\Chart.js\docs\04-Bar-Chart.md" />
+    <Content Include="vendors\Chart.js\docs\05-Radar-Chart.md" />
+    <Content Include="vendors\Chart.js\docs\06-Polar-Area-Chart.md" />
+    <Content Include="vendors\Chart.js\docs\07-Pie-Doughnut-Chart.md" />
+    <Content Include="vendors\Chart.js\docs\08-Bubble-Chart.md" />
+    <Content Include="vendors\Chart.js\docs\09-Advanced.md" />
+    <Content Include="vendors\Chart.js\docs\10-Notes.md" />
+    <Content Include="vendors\Chart.js\LICENSE.md" />
+    <Content Include="vendors\Chart.js\package.json" />
+    <Content Include="vendors\Chart.js\README.md" />
+    <Content Include="vendors\cropper\.bower.json" />
+    <Content Include="vendors\cropper\bower.json" />
+    <Content Include="vendors\cropper\CHANGELOG.md" />
+    <Content Include="vendors\cropper\LICENSE" />
+    <Content Include="vendors\cropper\package.json" />
+    <Content Include="vendors\cropper\README.md" />
+    <Content Include="vendors\cropper\src\scss\cropper.scss" />
+    <Content Include="vendors\cropper\src\scss\_main.scss" />
+    <Content Include="vendors\cropper\src\scss\_mixins.scss" />
+    <Content Include="vendors\cropper\src\scss\_utilities.scss" />
+    <Content Include="vendors\cropper\src\scss\_variables.scss" />
+    <Content Include="vendors\datatables.net-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-bs\bower.json" />
+    <Content Include="vendors\datatables.net-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-buttons-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-buttons-bs\bower.json" />
+    <Content Include="vendors\datatables.net-buttons-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-buttons\.bower.json" />
+    <Content Include="vendors\datatables.net-buttons\bower.json" />
+    <Content Include="vendors\datatables.net-buttons\Readme.md" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\bower.json" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-fixedheader\.bower.json" />
+    <Content Include="vendors\datatables.net-fixedheader\bower.json" />
+    <Content Include="vendors\datatables.net-fixedheader\Readme.md" />
+    <Content Include="vendors\datatables.net-keytable\.bower.json" />
+    <Content Include="vendors\datatables.net-keytable\bower.json" />
+    <Content Include="vendors\datatables.net-keytable\Readme.md" />
+    <Content Include="vendors\datatables.net-responsive-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-responsive-bs\bower.json" />
+    <Content Include="vendors\datatables.net-responsive-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-responsive\.bower.json" />
+    <Content Include="vendors\datatables.net-responsive\bower.json" />
+    <Content Include="vendors\datatables.net-responsive\Readme.md" />
+    <Content Include="vendors\datatables.net-scroller-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-scroller-bs\bower.json" />
+    <Content Include="vendors\datatables.net-scroller-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-scroller\.bower.json" />
+    <Content Include="vendors\datatables.net-scroller\bower.json" />
+    <Content Include="vendors\datatables.net-scroller\Readme.md" />
+    <Content Include="vendors\datatables.net\.bower.json" />
+    <Content Include="vendors\datatables.net\bower.json" />
+    <Content Include="vendors\datatables.net\Readme.md" />
+    <Content Include="vendors\DateJS\.bower.json" />
+    <Content Include="vendors\DateJS\bower.json" />
+    <Content Include="vendors\DateJS\LICENSE" />
+    <Content Include="vendors\DateJS\package.json" />
+    <Content Include="vendors\DateJS\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attachments\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57832</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44388/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

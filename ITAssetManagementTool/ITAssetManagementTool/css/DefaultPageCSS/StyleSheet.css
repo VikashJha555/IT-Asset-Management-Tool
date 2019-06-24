@@ -1,0 +1,168 @@
+﻿#breadcrumb {
+    color: #FF6600;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.appcontent {
+    position: relative;
+    width: 98%;
+    height: 100%;
+    left: 1%;
+}
+
+.tab-content {
+    min-height : 100%;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-top-color: transparent;
+}
+
+#ApplicationTab {
+    border: 1px solid #ddd;
+    position: relative;
+    width: 98%;
+    left: 1%;
+    height: 700px;
+    top: 10px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#pageTitle {
+    line-height: 1.5em;
+}
+
+#AdminTab {
+    border: 1px solid #ddd;
+    position: relative;
+    width: 98%;
+    left: 1%;
+    height: 700px;
+    top: 10px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#ApplicationMenu {
+    width: 20%;
+    background: #f8f8f8;
+    height: 698px;
+    border-right: 1px solid #ddd;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#ApplicationMenuHeader {
+    text-align: center;
+    height: 35px;
+    border-bottom: 1px solid #ddd;
+    background: #FF9900;
+    background: -moz-linear-gradient(top, #FF9900 0%, ##FFCC66 100%); 
+    background: -webkit-linear-gradient(top, #FF9900 0%,##FFCC66 100%); 
+    background: linear-gradient(to bottom, #FF9900 0%,#FFCC66 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9900', endColorstr='#FFCC66',GradientType=0 );
+    background:#FF9900;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height:2em;
+    border-radius: 5px 0px 0px 0px;
+    color:#ffffff;
+    font-size:15px;
+}
+
+.app {
+    position: relative;
+    float: left;
+}
+
+#ApplicationContent {
+    width: 80%;
+    height: 698px;
+}
+
+.AppContentTitle {
+    color: #FF9900;
+    width: 100%;
+    font-weight: bold;
+    height: 40px;
+    line-height: 2.5em;
+    font-size:15px;
+}
+
+#AdminMenu {
+    width: 20%;
+    background: #f8f8f8;
+    height: 698px;
+    border-right: 1px solid #ddd;
+    border-radius: 5px 0px 0px 0px;
+}
+
+#AdminMenuHeader {
+    text-align: center;
+    height: 35px;
+    border-bottom: 1px solid #ddd;
+    background: #FF9900;
+    background: -moz-linear-gradient(top, #FF9900 0%, ##FFCC66 100%); 
+    background: -webkit-linear-gradient(top, #FF9900 0%,##FFCC66 100%); 
+    background: linear-gradient(to bottom, #FF9900 0%,#FFCC66 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9900', endColorstr='#FFCC66',GradientType=0 );
+    background:#FF9900;
+        line-height:2em;
+    color:#ffffff;
+    font-size:15px;
+    vertical-align: middle;
+    font-weight: bold;
+    border-radius: 5px 0px 0px 0px;
+}
+
+#AdminContent {
+    width: 80%;
+    height: 698px;
+}
+
+#AdminTitle {
+    color: #FF9900;
+    width: 100%;
+    font-weight: bold;
+    height: 40px;
+    line-height: 2.5em;
+}
+
+.menu {
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    line-height: 2.5em;
+}
+
+    .menu:hover {
+        background: #FFFFCC;
+    }
+
+    .menu:focus {
+        background: #FFFFCC;
+    }
+
+.menuA {
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    line-height: 2.5em;
+}
+
+    .menuA:hover {
+        background: #FFFFCC;
+    }
+
+    .menuA:focus {
+        background: #FFFFCC;
+    }
+
+#ApplicationListTable {
+    width: 100%;
+    position: relative;
+    left: 0%;
+}
+.popover{
+    max-width:none;
+}
+        #ApplicationListTable_wrapper{
+            position: relative;
+            top: -20px;
+        }

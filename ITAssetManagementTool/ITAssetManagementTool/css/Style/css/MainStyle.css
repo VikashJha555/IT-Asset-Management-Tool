@@ -1,0 +1,398 @@
+﻿html {
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
+
+body {
+    margin: 0 auto;
+    width: 99%;
+    font: 14px/20px "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+    background: #DADFE1;
+    /* #999999; 14px/20px */
+    clear: both;
+}
+
+#background {
+    position: relative;
+    background: #666666;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 0.4%;
+}
+
+#background2 {
+    width: 98%;
+    position: relative;
+    left: 1%;
+    right: 1%;
+}
+/* navigation css*/
+#header {
+    width: 100%;
+    position: relative;
+    z-index: 1030;
+    top: 10px;
+}
+
+.navbar-inverse {
+    background-color: #FF9900;
+    border: none;
+    border-radius: 0px 0px 0px 0px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar-nav > li > a {
+    color: #000000;
+    font-size: 13px;
+    position: relative;
+    right: 0px;
+}
+
+.navbar-nav {
+    float: left;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    background-color: #FFCC00;
+    text-align: center;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#tblHeader {
+    width: 100%;
+}
+
+.navbar-nav > li {
+    position: relative;
+    float: left;
+    border-right: 1px dashed #666666;
+}
+
+/* content css*/
+#content {
+    background-color: #ffffff;
+    min-height:760px;
+    margin-top: 9px;
+}
+
+#footer {
+    background: #666666; /* Old browsers */
+    background: -moz-linear-gradient(top, #666666 0%, #000000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #666666 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #666666 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    color: white;
+    text-align: center;
+    height: 25px;
+    /*display: table-cell;*/
+    vertical-align: middle;
+    width: 100%;
+}
+
+#breadcrumb {
+    color: #FF6600;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.breadcrumb2 {
+    position: relative;
+    color: #FF6600;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.breadcrumb3 {
+    margin: 2% 0px 0px 1%;
+}
+
+#breadcrumb a {
+    color: #FF6600;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.information {
+    position: relative;
+    float: left;
+    width: 98%;
+    margin: 0px 0px 0.5% 0.5%;
+    border: 1px dashed #c5c5c5;
+    height: 25%;
+}
+
+.information3 {
+    position: relative;
+    float: left;
+    width: 49%;
+    margin: 0px 0px 0.5% 0.5%;
+    border: 1px dashed #c5c5c5;
+    height: 48%;
+}
+
+.information2 {
+    position: relative;
+    float: left;
+    width: 48.5%;
+    margin: 0px 0px 0% 1%;
+    border: 1px dashed #c5c5c5;
+    height: 34.5%;
+}
+
+#userDetails {
+    /*background:#FFCC66;*/
+    border: none;
+}
+
+#pendingTransaction {
+    border: none;
+}
+
+#completedTransaction {
+    border: none;
+}
+
+#expiredTransaction {
+    border: none;
+}
+
+#tableUserDetails {
+    width: 98%;
+    border: 1px solid #c5c5c5;
+    position: relative;
+    left: 1%;
+    top: 1%;
+    height: 12%;
+}
+
+#purchaseUserDetails {
+    width: 98%;
+    border: 1px solid #c5c5c5;
+    position: relative;
+    left: 1%;
+    top: 0%;
+    height: 20%;
+}
+
+#printFormFilter {
+    width: 98%;
+    border: 1px solid #c5c5c5;
+    position: relative;
+    left: 1%;
+    top: 0%;
+    height: 20%;
+}
+
+    #printFormFilter > td {
+        border-color: #c5c5c5;
+    }
+
+#tableHeader {
+    font-size: 13px;
+    text-align: center;
+    background: #666666;
+    color: white;
+    font-weight: bold;
+    padding: 4px 10px;
+}
+
+#tableHeader2 {
+    font-size: 14px;
+    padding: 7px 15px;
+    text-align: center;
+    background: #666666;
+    color: white;
+    font-weight: bold;
+}
+
+.panel-title {
+    height: 5px;
+    text-align: center;
+    font-size: 13px;
+    display: table-cell;
+}
+
+.panel-warning {
+    position: relative;
+    top: 1%;
+    height: 98%;
+}
+
+.panel-success {
+    position: relative;
+    top: 0%;
+    height: 100%;
+    width: 98%;
+    left: 1%;
+}
+
+.panel-danger {
+    position: relative;
+    top: 0%;
+    height: 100%;
+}
+
+.tableColumn1 {
+    width: 25%;
+    border-right-style: dashed;
+}
+
+.tableColumn2 {
+    width: 75%;
+}
+
+.tableColumn {
+    background: #ffffff;
+    border-color: #c5c5c5;
+    font-size: 14px;
+    height: 25%;
+}
+
+.tab-content {
+    position: relative;
+    height: 100%;
+    border: 1px solid #c5c5c5;
+    border-top: none;
+}
+
+.tab-content2 {
+    position: relative;
+    height: 540px;
+}
+
+.tab-content3 {
+    position: relative;
+    height: 630px;
+}
+
+.appcontent1 {
+    width: 98%;
+    position: relative;
+    left: 1%;
+    top: 2%;
+}
+/* for tab setting*/
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #FF6600;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #c5c5c5;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs > li > a {
+    background: #FFCC00;
+    color: black;
+}
+/* for order table and dealer charge table*/
+.tables {
+    position: relative;
+    width: 98%;
+    left: 1%;
+    border-color: #c5c5c5;
+}
+
+/* for buttonDiv */
+.btnDiv {
+    position: relative;
+    width: 98%;
+    left: 1%;
+}
+
+.orderDealerButton {
+    position: relative;
+    float: left;
+    left: 65%;
+}
+
+.DealerButton {
+    position: relative;
+    float: left;
+    left: 75%;
+}
+
+.DealerButton1 {
+    position: relative;
+    float: left;
+    left: 77%;
+}
+
+.orderDealerButton1 {
+    position: relative;
+    float: left;
+    left: 77%;
+}
+
+.orderDealerButton2 {
+    position: relative;
+    margin-left: 1%;
+}
+
+.orderDealerButton3 {
+    position: relative;
+    margin-left: 8%;
+}
+
+.unitQtyPriceColumn {
+    width: 12%;
+}
+
+.serviceTyreSizeColumn {
+    width: 30%;
+}
+
+.serviceTyreSizeColumn1 {
+    width: 10%;
+}
+
+.serviceTyreSizeColumn2 {
+    width: 30%;
+}
+
+.serviceTyreSizeColumn3 {
+    width: 20%;
+}
+
+.columnTextCenter {
+    text-align: center;
+}
+
+.top {
+    position: relative;
+    width: 98%;
+    left: 1%;
+}
+
+.topDiv {
+    display: table-cell;
+    line-height: 2em;
+    position: relative;
+    float: left;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.active.btn-primary, .focus.btn-primary, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open > .btn-primary.dropdown-toggle {
+    color: #ffffff;
+}
+
+.btn-primary {
+    color: #ffffff;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    opacity: 1.0;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    background: #ffcc00;
+}
